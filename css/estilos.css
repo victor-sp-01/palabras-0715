@@ -1,0 +1,237 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+    min-height: 100vh; 
+    
+
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.mostrar{
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+    min-height: 100vh;  
+    padding: 20px;
+}
+
+.mostrar.on{ display: flex; }
+
+.fondo-1{
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+
+
+.formulario{
+    background: rgb(259, 259, 259, .5);
+    position: relative;
+    display: flex;
+    flex-direction: column; align-items: center;
+
+    width: min(100%, 450px);
+    padding: 20px; gap: 20px;
+}
+
+.formulario.off{ display: none; }
+
+.titulo{
+    font-size: 23px;
+    color: white;
+}
+
+.fecha{
+    background: none;
+    border: none;
+    outline: none;
+
+    width: 100%; 
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px white;
+
+    color: white;
+}
+
+.verificar{
+    background: white;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+
+    box-shadow: 0 0 0 1px white;
+    border-radius: 5px;
+
+    color: rgb(0, 0, 0, .5);
+    cursor: pointer;
+}
+
+.verificar:hover{ opacity: .5; transition: .3s ease all; }
+
+.verificar::before{
+    content: '';
+    background: white;
+    pointer-events: none;
+
+    position: absolute; top: calc(-20px - (2.5px / 2)); left: 20px;
+    width: calc(100% - 40px);
+    height: 2.5px;
+
+    border-radius: 2.5px;
+
+}
+
+
+
+ 
+.img-circular.img-1{
+    position: absolute; top: 100px; left: 50px;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+}
+
+
+.img-circular.img-2{
+    position: absolute; top: 450px; right: 100px;
+
+    width: 200px;
+    height: 200px;
+
+    border-radius: 50%;
+}
+
+.img-circular.img-3{
+    position: absolute; bottom: 25px; right: calc(50% - 75px);
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+}
+
+.img-circular:hover{ transition: .3s ease all; border-radius: 0; box-shadow: 0 0 5px 0 rgb(259, 259, 259, .5); cursor: pointer; }
+
+.contenedor-texto{ 
+    background: rgb(259, 259, 259, .5);
+    backdrop-filter: blur(2.5px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    width: min(100%, 980px);
+    min-height: auto;
+    padding: 20px; gap: 20px;
+
+    border-radius: 5px;
+
+    overflow: hidden;
+ 
+}
+
+.contenedor-letra{ 
+    display: flex; align-items: center; justify-content: left;
+
+    width: 100%;
+    min-height: auto;
+    gap: 10px;
+
+    opacity: 0;
+ 
+}
+
+.contenedor-letra.uno{ animation: aparicion1 .5s forwards; animation-delay: .5s; }
+.contenedor-letra.dos{ animation: aparicion2 .5s forwards; animation-delay: 1s; }
+.contenedor-letra.tres{ animation: aparicion1 .5s forwards; animation-delay: 1.5s; }
+.contenedor-letra.cuatro{ animation: aparicion2 .5s forwards; animation-delay: 2s; }
+.contenedor-letra.cinco{ animation: aparicion1 .5s forwards; animation-delay: 2.5s; }
+.contenedor-letra.seis{ animation: aparicion2 .5s forwards; animation-delay: 3s; }
+
+
+.contenedor-letra-1{
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.contenedor-letra-2{
+    width: 100%;
+    display: flex;
+    word-break: break-word;
+}
+
+
+.contenedor-letra-principal{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.contenedor-letra-secundaria{
+    width: auto;
+
+    font-size:18px;   
+    font-weight: normal;
+}
+
+
+@keyframes ordenar {
+    from{
+        flex-direction: column-reverse;
+    }
+
+    to{
+        flex-direction: column;
+    }
+}
+
+@keyframes aparicion1 {
+    from{
+        opacity: 0;
+        transform: translateX(50px);  
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0); 
+    }
+}
+
+@keyframes aparicion2 {
+    from{
+        opacity: 0;
+        transform: translateX(-50px);  
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0); 
+    }
+}
