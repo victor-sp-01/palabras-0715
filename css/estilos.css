@@ -18,7 +18,11 @@ body{
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+
 }
+
+body::-webkit-scrollbar{ width: 0; height: 0; }
 
 .mostrar{
     display: none;
@@ -46,8 +50,10 @@ body{
     display: flex;
     flex-direction: column; align-items: center;
 
-    width: min(100%, 450px);
+    width: min(calc(100% - 20px), 450px);
     padding: 20px; gap: 20px;
+
+    border-radius: 5px;
 }
 
 .formulario.off{ display: none; }
@@ -102,40 +108,7 @@ body{
 
     border-radius: 2.5px;
 
-}
-
-
-
- 
-.img-circular.img-1{
-    position: fixed; top: 100px; left: 50px;
-
-    width: 300px;
-    height: 300px;
-
-    border-radius: 50%;
-}
-
-
-.img-circular.img-2{
-    position: fixed; top: 450px; right: 100px;
-
-    width: 200px;
-    height: 200px;
-
-    border-radius: 50%;
-}
-
-.img-circular.img-3{
-    position: fixed; bottom: 25px; right: calc(50% - 75px);
-
-    width: 150px;
-    height: 150px;
-
-    border-radius: 50%;
-}
-
-.img-circular:hover{ transition: .3s ease all; border-radius: 0; box-shadow: 0 0 5px 0 rgb(259, 259, 259, .5); cursor: pointer; }
+} 
 
 .contenedor-texto{  
     
@@ -186,7 +159,7 @@ body{
     border-radius: 50%;
 }
 
-.contenedor-letra-1:hover{ color:  #572364; cursor: pointer; z-index: 5; } 
+.contenedor-letra-1:hover{ color: #fe0000; cursor: pointer; z-index: 5; } 
 
 .contenedor-letra.uno .contenedor-letra-1.on + .contenedor-letra-2{ display: flex; animation: aparicion2 .5s forwards; }
 .contenedor-letra.dos .contenedor-letra-1.on + .contenedor-letra-2{  display: flex; animation: aparicion1 .5s forwards; }
@@ -200,14 +173,14 @@ body{
     background: rgb(0, 0, 0, .3);
     backdrop-filter: blur(2.5px);
     width: 100%;
-    height: auto;
-    padding: 20px;
+    min-height: auto;
+    padding: 20px; gap: 20px;
     
 
     display: none;
-    word-break: break-word;
-    overflow: hidden;
-
+    word-break: break-word; 
+    flex-direction: column;
+    align-items: center;
  
     text-align: center;
 
@@ -233,6 +206,20 @@ body{
     font-weight: normal;
 }
 
+
+.imagenes{ 
+    display: flex;
+    width: min(100%, 150px);
+    height: auto;
+    border-radius: 50%;
+    overflow: hidden;
+
+    transition: .3s ease all;
+}
+
+.imagenes img{ object-fit: cover; width: 100%;  }
+
+.imagenes:hover{ opacity: .5; }
 
 @keyframes ordenar {
     from{
