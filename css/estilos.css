@@ -25,7 +25,7 @@ body{
     align-items: center;
     justify-content: center;
 
-    width: auto;
+    width: 100%;
     min-height: 100vh;  
     padding: 20px;
 }
@@ -108,7 +108,7 @@ body{
 
  
 .img-circular.img-1{
-    position: absolute; top: 100px; left: 50px;
+    position: fixed; top: 100px; left: 50px;
 
     width: 300px;
     height: 300px;
@@ -118,7 +118,7 @@ body{
 
 
 .img-circular.img-2{
-    position: absolute; top: 450px; right: 100px;
+    position: fixed; top: 450px; right: 100px;
 
     width: 200px;
     height: 200px;
@@ -127,7 +127,7 @@ body{
 }
 
 .img-circular.img-3{
-    position: absolute; bottom: 25px; right: calc(50% - 75px);
+    position: fixed; bottom: 25px; right: calc(50% - 75px);
 
     width: 150px;
     height: 150px;
@@ -137,9 +137,8 @@ body{
 
 .img-circular:hover{ transition: .3s ease all; border-radius: 0; box-shadow: 0 0 5px 0 rgb(259, 259, 259, .5); cursor: pointer; }
 
-.contenedor-texto{ 
-    background: rgb(259, 259, 259, .5);
-    backdrop-filter: blur(2.5px);
+.contenedor-texto{  
+    
     position: relative;
     display: flex;
     flex-direction: column;
@@ -149,18 +148,18 @@ body{
     padding: 20px; gap: 20px;
 
     border-radius: 5px;
-
-    overflow: hidden;
  
 }
 
-.contenedor-letra{ 
-    display: flex; align-items: center; justify-content: left;
+.contenedor-letra{  
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    flex-direction: column;
 
     width: 100%;
     min-height: auto;
-    gap: 10px;
-
+    gap: 20px;
+ 
     opacity: 0;
  
 }
@@ -171,29 +170,62 @@ body{
 .contenedor-letra.cuatro{ animation: aparicion2 .5s forwards; animation-delay: 2s; }
 .contenedor-letra.cinco{ animation: aparicion1 .5s forwards; animation-delay: 2.5s; }
 .contenedor-letra.seis{ animation: aparicion2 .5s forwards; animation-delay: 3s; }
+ 
 
 
 .contenedor-letra-1{
+    background: rgb(259, 259, 259, .5);
+    backdrop-filter: blur(2.5px);
     width: 80px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
 
     text-align: center;
+    border-radius: 50%;
 }
 
+.contenedor-letra-1:hover{ color:  #572364; cursor: pointer; z-index: 5; } 
+
+.contenedor-letra.uno .contenedor-letra-1.on + .contenedor-letra-2{ display: flex; animation: aparicion2 .5s forwards; }
+.contenedor-letra.dos .contenedor-letra-1.on + .contenedor-letra-2{  display: flex; animation: aparicion1 .5s forwards; }
+.contenedor-letra.tres .contenedor-letra-1.on + .contenedor-letra-2{ display: flex; animation: aparicion2 .5s forwards;}
+.contenedor-letra.cuatro .contenedor-letra-1.on + .contenedor-letra-2{ display: flex; animation: aparicion1 .5s forwards;}
+.contenedor-letra.cinco .contenedor-letra-1.on + .contenedor-letra-2{ display: flex; animation: aparicion2 .5s forwards; }
+.contenedor-letra.seis .contenedor-letra-1.on + .contenedor-letra-2{display: flex; animation: aparicion1 .5s forwards;}
+
+
 .contenedor-letra-2{
+    background: rgb(0, 0, 0, .3);
+    backdrop-filter: blur(2.5px);
     width: 100%;
-    display: flex;
+    height: auto;
+    padding: 20px;
+    
+
+    display: none;
     word-break: break-word;
+    overflow: hidden;
+
+ 
+    text-align: center;
+
+    border-radius: 5px; 
+    box-shadow: 0 0 0 1px white;
+
+    color: white;
+    
 }
 
 
 .contenedor-letra-principal{
     font-size: 40px;
     font-weight: bold;
+    transition: .3s ease all;
+    pointer-events: none;
 }
-
+ 
 .contenedor-letra-secundaria{
     width: auto;
 
