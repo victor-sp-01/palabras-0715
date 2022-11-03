@@ -172,7 +172,7 @@ body::-webkit-scrollbar{ width: 0; height: 0; }
 
 
 .contenedor-letra-2{
-    background: rgb(0, 0, 0, .7);
+    background: rgb(259, 259, 259, .3);
     backdrop-filter: blur(10px);
     width: 100%;
     min-height: auto;
@@ -186,11 +186,10 @@ body::-webkit-scrollbar{ width: 0; height: 0; }
  
     text-align: center;
 
-    border-radius: 5px; 
-    box-shadow: 0 0 0 1px white;
+    border-radius: 5px;  
 
-    color: white;
-    
+    color: black;
+    font-weight: bold;
 }
 
 
@@ -202,10 +201,13 @@ body::-webkit-scrollbar{ width: 0; height: 0; }
 }
  
 .contenedor-letra-secundaria{
+    background: rgb(259, 259, 259, .3);
+    padding: 20px;
     width: auto;
 
     font-size:18px;   
-    font-weight: normal;
+    font-weight: 550;
+    border-radius: 5px;
 }
 
 
